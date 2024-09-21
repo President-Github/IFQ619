@@ -179,16 +179,16 @@
 177,Climate Change,net,0.3753
 178,Climate Change,target,0.3622
 179,Climate Change,reduction,0.3098
-180,First Nation,indigenous,1.0924
-181,First Nation,aboriginal,1.0563
-182,First Nation,voice,0.5474
-183,First Nation,torres,0.4682
-184,First Nation,torres strait,0.4649
-185,First Nation,strait,0.4609
-186,First Nation,people,0.4289
-187,First Nation,treaty,0.4124
-188,First Nation,islander,0.3878
-189,First Nation,aboriginal torres,0.385
+180,Indigenous,indigenous,1.0924
+181,Indigenous,aboriginal,1.0563
+182,Indigenous,voice,0.5474
+183,Indigenous,torres,0.4682
+184,Indigenous,torres strait,0.4649
+185,Indigenous,strait,0.4609
+186,Indigenous,people,0.4289
+187,Indigenous,treaty,0.4124
+188,Indigenous,islander,0.3878
+189,Indigenous,aboriginal torres,0.385
 190,COVID 2,vaccine,1.5977
 191,COVID 2,vaccination,0.8056
 192,COVID 2,astrazeneca,0.6335
