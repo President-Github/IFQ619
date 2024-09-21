@@ -1,0 +1,201 @@
+,Topic Cluster,Term,Weight
+0,Politics 1,morrison,0.9049
+1,Politics 1,minister,0.5345
+2,Politics 1,government,0.4694
+3,Politics 1,prime,0.465
+4,Politics 1,prime minister,0.4399
+5,Politics 1,dutton,0.3951
+6,Politics 1,joyce,0.3181
+7,Politics 1,turnbull,0.3076
+8,Politics 1,nationals,0.2433
+9,Politics 1,albanese,0.2421
+10,Youth Crime,children,0.5241
+11,Youth Crime,youth,0.485
+12,Youth Crime,detention,0.4236
+13,Youth Crime,justice,0.2221
+14,Youth Crime,young,0.2012
+15,Youth Crime,watch,0.2005
+16,Youth Crime,youth justice,0.1988
+17,Youth Crime,young people,0.1854
+18,Youth Crime,human rights,0.1827
+19,Youth Crime,rights,0.1816
+20,Family,people,0.4494
+21,Family,life,0.3078
+22,Family,time,0.3001
+23,Family,family,0.2996
+24,Family,ve,0.2985
+25,Family,don,0.2541
+26,Family,years,0.2426
+27,Family,really,0.2425
+28,Family,home,0.2382
+29,Family,got,0.2184
+30,Politics 2,labor,1.001
+31,Politics 2,party,0.9887
+32,Politics 2,election,0.6838
+33,Politics 2,seats,0.499
+34,Politics 2,seat,0.4795
+35,Politics 2,lnp,0.4662
+36,Politics 2,nation,0.4611
+37,Politics 2,vote,0.4478
+38,Politics 2,liberal,0.4173
+39,Politics 2,greens,0.4122
+40,Environment,species,1.1908
+41,Environment,water,0.6086
+42,Environment,clearing,0.54
+43,Environment,environment,0.5242
+44,Environment,conservation,0.434
+45,Environment,habitat,0.4313
+46,Environment,threatened,0.4238
+47,Environment,land,0.4153
+48,Environment,environmental,0.3927
+49,Environment,threatened species,0.3876
+50,COVID 1,cases,0.8937
+51,COVID 1,covid,0.8048
+52,COVID 1,coronavirus,0.6587
+53,COVID 1,health,0.6177
+54,COVID 1,covid 19,0.5362
+55,COVID 1,quarantine,0.531
+56,COVID 1,19,0.4995
+57,COVID 1,nsw,0.4831
+58,COVID 1,victoria,0.4208
+59,COVID 1,virus,0.3848
+60,Aged Care,care,1.716
+61,Aged Care,aged care,1.6155
+62,Aged Care,aged,1.3918
+63,Aged Care,staff,0.4724
+64,Aged Care,workers,0.4163
+65,Aged Care,health,0.4079
+66,Aged Care,residents,0.3822
+67,Aged Care,hospital,0.2815
+68,Aged Care,providers,0.2614
+69,Aged Care,homes,0.2555
+70,Mining,adani,2.0089
+71,Mining,coal,0.583
+72,Mining,project,0.5679
+73,Mining,carmichael,0.4723
+74,Mining,company,0.3109
+75,Mining,coalmine,0.2742
+76,Mining,rail,0.2441
+77,Mining,loan,0.2286
+78,Mining,mining,0.2209
+79,Mining,galilee,0.2012
+80,Power,energy,1.7254
+81,Power,gas,1.1283
+82,Power,coal,0.9897
+83,Power,power,0.767
+84,Power,electricity,0.7304
+85,Power,renewable,0.5788
+86,Power,prices,0.559
+87,Power,renewable energy,0.4728
+88,Power,solar,0.46
+89,Power,market,0.4544
+90,Police,police,1.8819
+91,Police,officers,0.5058
+92,Police,queensland police,0.4398
+93,Police,inquiry,0.2793
+94,Police,officer,0.2666
+95,Police,qps,0.2524
+96,Police,man,0.2478
+97,Police,carroll,0.2401
+98,Police,commissioner,0.2152
+99,Police,investigation,0.1833
+100,Great Barrier Reef,reef,1.648
+101,Great Barrier Reef,bleaching,0.652
+102,Great Barrier Reef,coral,0.6129
+103,Great Barrier Reef,barrier reef,0.6115
+104,Great Barrier Reef,great barrier,0.6045
+105,Great Barrier Reef,barrier,0.5781
+106,Great Barrier Reef,great,0.404
+107,Great Barrier Reef,corals,0.3241
+108,Great Barrier Reef,reefs,0.3047
+109,Great Barrier Reef,marine,0.304
+110,Flood,rain,0.5142
+111,Flood,flood,0.4612
+112,Flood,rainfall,0.4453
+113,Flood,bureau,0.4025
+114,Flood,temperatures,0.4002
+115,Flood,weather,0.3882
+116,Flood,flooding,0.3682
+117,Flood,south,0.3434
+118,Flood,nsw,0.3199
+119,Flood,water,0.3177
+120,Education,students,1.5566
+121,Education,schools,1.358
+122,Education,school,1.0076
+123,Education,education,0.8643
+124,Education,funding,0.6398
+125,Education,universities,0.63
+126,Education,university,0.5667
+127,Education,student,0.4741
+128,Education,teachers,0.4395
+129,Education,public schools,0.3307
+130,Domestic Violence,violence,1.0268
+131,Domestic Violence,women,0.8212
+132,Domestic Violence,domestic,0.7018
+133,Domestic Violence,domestic violence,0.654
+134,Domestic Violence,family violence,0.3471
+135,Domestic Violence,family,0.2867
+136,Domestic Violence,abortion,0.2801
+137,Domestic Violence,sexual,0.2179
+138,Domestic Violence,victims,0.1948
+139,Domestic Violence,inquiry,0.1919
+140,Sport,rugby,0.8445
+141,Sport,game,0.6871
+142,Sport,players,0.4776
+143,Sport,league,0.4703
+144,Sport,origin,0.4124
+145,Sport,nrl,0.4038
+146,Sport,season,0.3748
+147,Sport,super,0.367
+148,Sport,team,0.3574
+149,Sport,super rugby,0.3126
+150,Cost of Living,tax,0.6855
+151,Cost of Living,housing,0.6503
+152,Cost of Living,budget,0.5296
+153,Cost of Living,rate,0.4873
+154,Cost of Living,government,0.447
+155,Cost of Living,income,0.3839
+156,Cost of Living,growth,0.3605
+157,Cost of Living,inflation,0.3591
+158,Cost of Living,rent,0.3429
+159,Cost of Living,economy,0.3173
+160,Other,trump,0.4332
+161,Other,world,0.3945
+162,Other,morning,0.3635
+163,Other,news,0.3383
+164,Other,sign,0.3077
+165,Other,writes,0.3051
+166,Other,mail,0.305
+167,Other,media,0.2868
+168,Other,australian,0.2833
+169,Other,reports,0.2641
+170,Climate Change,climate,1.6437
+171,Climate Change,emissions,1.3935
+172,Climate Change,climate change,0.7735
+173,Climate Change,change,0.6206
+174,Climate Change,carbon,0.6011
+175,Climate Change,net zero,0.4192
+176,Climate Change,zero,0.3863
+177,Climate Change,net,0.3753
+178,Climate Change,target,0.3622
+179,Climate Change,reduction,0.3098
+180,First Nation,indigenous,1.0924
+181,First Nation,aboriginal,1.0563
+182,First Nation,voice,0.5474
+183,First Nation,torres,0.4682
+184,First Nation,torres strait,0.4649
+185,First Nation,strait,0.4609
+186,First Nation,people,0.4289
+187,First Nation,treaty,0.4124
+188,First Nation,islander,0.3878
+189,First Nation,aboriginal torres,0.385
+190,COVID 2,vaccine,1.5977
+191,COVID 2,vaccination,0.8056
+192,COVID 2,astrazeneca,0.6335
+193,COVID 2,vaccinated,0.6105
+194,COVID 2,doses,0.5746
+195,COVID 2,vaccines,0.5544
+196,COVID 2,covid,0.5491
+197,COVID 2,pfizer,0.5485
+198,COVID 2,rollout,0.3816
+199,COVID 2,health,0.3103
