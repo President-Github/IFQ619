@@ -1,0 +1,218 @@
+---
+title: "3.X Modules"
+output: html_document
+date: '2025-02-24'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+df <-data.frame(x =seq(-3, 3, by =1))
+```
+
+
+```{r Step 1, include=FALSE}
+df <-mutate(df, y =dnorm(x, mean =0, sd =1))
+
+df
+
+```
+
+pnorm(12, mean =10, sd =2, lower.tail = F)- normal distribuition with specific dimensions
+
+
+qnorm(0.3, mean =10, sd =2, lower.tail = T) -normal distribuition with quantile dimensions
+
+rnorm(n =1, mean =10, sd =1) - random genseration with parameters
+
+
+For example, the density of a normal distribution with μ=5 and σ=2 at x=10 is:
+
+dnorm(x =10, mean =5, sd =2)
+
+
+
+```{r Step 2: Using stat_function()}
+library(ggplot2)
+ggplot(data = df, aes(x = x)) +
+stat_function(fun = dnorm,
+args =list(mean =2,
+sd =1)) +
+theme_bw()
+
+
+ggplot(data = df, aes(x = x)) +
+stat_function(fun = dnorm,
+args =list(mean =2,
+sd =1)) +
+xlim(c(-3, 7)) +theme_bw()
+
+ggplot(data = df, aes(x = x)) +
+stat_function(fun = dnorm,
+args =list(mean =2,
+sd =0.1)) +
+theme_bw()
+
+
+```
+
+
+
+```{r Step 3: Refining your plot}
+
+# Can increase the number of points being plotted with stat_function
+
+ggplot(data = df, aes(x = x)) +
+stat_function(fun = dnorm,
+args =list(mean =2,
+sd =0.1), n = 1001) +
+theme_bw()
+
+
+# With better limits:
+
+ggplot(data = df, aes(x = x)) +
+stat_function(fun = dnorm,
+args =list(mean =2,
+sd =0.1) )+
+xlim(c(1.5, 2.5)) +
+theme_bw()
+```
+```{r T_distribution}
+
+# The t distribution lets us account for two sources of variability: regular sampling variability and the variability associated with having small sample sizes.
+
+#The t-distribution looks like a standard normal but has 'heavy tails', i.e. more density further from the mean than a normal distribution.
+
+# he t distribution has one parameter, ν, the 'degrees of freedom'. It is equal to the number of observations in our dataset minus the number of parameters we’ve estimated. As v tends to infinite the t looks more like a normal distribution
+
+# probability for a T distribuition for values over -2 (df =degrees of freedom? v)
+pt(-2, df =2, lower.tail = T)
+
+# Percentile based (80%)
+qt(0.8, df = 2, lower.tail = T)
+
+# Randomly generate an observation from a t distibuition:
+rt(n =1, df =2)
+
+```
+
+```{r CaseStudyTask1}
+setwd("D:/Morgan/Downloads")
+library(tidyverse)
+library(ggplot2)
+lung_data_100<-read_csv("lung_data_100.csv")
+
+head(lung_data_100)
+
+
+
+```
+```{r CaseStudyTask2}
+xbar <-mean(lung_data_100$fev1)
+s <-sd(lung_data_100$fev1)
+
+xbar
+
+s
+```
+
+
+The measure is FEV_1, the amount of air that someone can expel out of their lungs in one second (forced expiratory volume). In general, the average is 1.8 with a standard deviation of 0.2.
+
+What we have found seems close
+
+```{r CaseStudyTask2}
+# Histogram
+
+ggplot(data = lung_data_100, aes(x = fev1)) +
+geom_histogram(binwidth = 0.1, colour ="darkgrey" , fill = "lightblue") +
+theme_bw()
+
+
+#B. Normally we plot the count of the data on the y axis. This time, we’ll plot the density so that the total area of all our histogram bars is 1. We do this by letting the y-aesthetic option be "..density..". If we wanted to explicitly use the count we could write "..count..".
+
+ggplot(data = lung_data_100, aes(x = fev1, y = ..density..)) +
+geom_histogram(binwidth =0.1, colour ="darkgrey", fill ="papayawhip") +
+theme_bw()
+
+#Notice that the y scale has changed but that the histogram is still the same shape. If we calculated the area of the rectangles in this histogram with ..density.. on the y axis, we would get an area of 1. In this way the density histogram mimics one of the key properties of a probability distribution, that its total integral (for continuous variables) or sum (for discrete variables) is 1.
+
+#C. To help describe the variability in our graph, we might want to plot the mean along with the data. We can easily add it as a red vertical line by using geom_vline().
+
+ggplot(data = lung_data_100, aes(x = fev1, y = ..density..)) +
+geom_histogram(binwidth =0.1, colour ="darkgrey", fill ="papayawhip") +
+geom_vline(xintercept = xbar, color ="red") +
+theme_bw()
+
+#D. We think a normal distribution might be a sensible model to describe our data, so let’s plot a normal distribution with mean xbar and standard deviation s, our estimators for μ and σ.
+
+ggplot(data = lung_data_100, aes(x = fev1)) +
+geom_histogram(binwidth =0.1,
+aes(y = ..density..),
+color ="darkgrey",
+fill ="papayawhip") +
+geom_vline(xintercept = xbar, color ="red") +
+stat_function(fun = dnorm,
+args=list(mean = xbar,
+sd = s),
+geom ="line") +
+theme_bw()
+
+#E. We could also use geom_ribbon(), which is great for showing continuous probability densities. We have to specify the minimum values for y and tell stat_function() that the y values from dnorm are the maximum y values, which we do with ..y.., which are the calculated y values.
+
+ggplot(data = lung_data_100, aes(x = fev1)) +
+  geom_histogram(binwidth =0.1, # set binwidth
+  aes(y = ..density..), # plot the density rather than count
+  color ="darkgrey", # outline of bars
+  fill ="papayawhip") +# fill for bars
+  geom_vline(xintercept = xbar, color ="red") +# red vertical line
+  stat_function(fun = dnorm, # plot a normal
+  args =list(mean = xbar, # with mean xbar
+  sd = s), # and standard deviation s
+  geom ="ribbon", # use the ribbon geometry
+  fill ="lightskyblue", # internal color of ribbon
+  color =NA, # don't draw an outline on the ribbon
+  alpha =0.25, # semi-transparent
+  aes(ymin =0, # bottom edge of ribbon is at y = 0
+  ymax = ..y..)) +# top edge of ribbon given by dnorm()
+  theme_bw()
+
+
+```
+
+The summary statistics of a particular dataset summarise the data itself. While this information is useful, it doesn’t allow us to predict what we expect the next value will be.
+
+If it is an appropriate fit for a normal distribuition we can use this to form predictions of the probability of a particular reading
+
+```{r PredictNormalDist}
+
+xbar <- mean(lung_data_100$fev1)
+s <- sd(lung_data_100$fev1)
+pnorm(q =1.7, mean = xbar, sd = s) # FEV1 value less than 1.7 
+
+
+```
+
+
+We could also integrate the pdf function and and calculate the area. The pnorm() approach used and the integrate() function are mathematically equivalent, but it’s often more convenient to write out the pnorm() version.
+
+
+The normal usage of the integrate method is when we have two limits as this would otherwise need us to subtract a distribuition from the other
+
+```{r}
+
+integrate(dnorm,
+mean = xbar,
+sd = s,
+lower =1.8, # Can also do -Inf
+upper =2)
+
+
+# Or with pnorm
+
+pnorm(q =2, mean = xbar, sd = s) - pnorm(q =1.8, mean = xbar, sd = s)
+
+```
+
